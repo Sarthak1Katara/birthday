@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday ✿</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=Pinyon+Script&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --rose: #f4b8c8;
+      --rose-light: #fde8ef;
+      --rose-deep: #d97496;
+      --sage: #b5cca9;
+      --sage-light: #e6f0e2;
+      --sage-deep: #7aaa68;
+      --cream: #fdf8f4;
+      --blush: #fbf0f4;
+      --text: #4a3f45;
+      --text-soft: #8a7680;
+      --mint: #c8e6d8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(253, 248, 244, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rose-light);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-soft);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 20px;
+      transition: color 0.2s;
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--rose-deep);
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 40px 60px;
+      position: relative;
+    }
+
+    /* HERO */
+    #hero {
+      background: linear-gradient(160deg, var(--blush) 0%, var(--sage-light) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .petal {
+      position: absolute;
+      border-radius: 50% 0 50% 0;
+      opacity: 0.25;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-18px) rotate(8deg);
+      }
+    }
+
+    @keyframes float-reverse {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(18px) rotate(-8deg);
+      }
+    }
+
+    .hero-script {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(56px, 10vw, 100px);
+      color: var(--rose-deep);
+      line-height: 1;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 20px rgba(217, 116, 150, 0.15);
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 52px);
+      color: var(--text);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--text-soft);
+      max-width: 420px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .hero-photo-ring {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 0 8px var(--rose-light), 0 12px 40px rgba(217, 116, 150, 0.2);
+      overflow: hidden;
+      margin: 0 auto 36px;
+      background: var(--rose-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-photo-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .date-badge {
+      display: inline-block;
+      background: white;
+      border: 1px solid var(--rose-light);
+      border-radius: 40px;
+      padding: 8px 22px;
+      font-size: 13px;
+      color: var(--text-soft);
+      letter-spacing: 0.05em;
+    }
+
+    /* GALLERY */
+    #gallery {
+      background: var(--cream);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-bottom: 40px;
+      letter-spacing: 0.03em;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 960px;
+      position: relative;
+    }
+
+    .gallery-slot {
+      aspect-ratio: 1;
+      border-radius: 16px;
+      background: var(--rose-light);
+      border: 2px dashed var(--rose);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-slot:hover {
+      border-color: var(--rose-deep);
+      background: #fde0ea;
+    }
+
+    .gallery-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slot-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(253, 248, 244, 0.9);
+      padding: 8px 10px;
+      font-size: 11px;
+      color: var(--text-soft);
+      font-family: 'DM Sans', sans-serif;
+      text-align: center;
+    }
+
+    /* NOTES */
+    #notes {
+      background: var(--blush);
+      position: relative;
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 960px;
+    }
+
+    .note-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 24px;
+      border: 1px solid var(--rose-light);
+      box-shadow: 0 4px 20px rgba(217, 116, 150, 0.07);
+      position: relative;
+    }
+
+    .note-card::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      color: var(--rose-light);
+      position: absolute;
+      top: 4px;
+      left: 16px;
+      line-height: 1;
+    }
+
+    .note-emoji {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .note-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: var(--rose-deep);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .note-body {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.75;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* MAGAZINE */
+    #magazine {
+      background: var(--sage-light);
+    }
+
+    .mag-wrapper {
+      max-width: 840px;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(100, 140, 90, 0.12);
+      position: relative;
+    }
+
+    .mag-header {
+      background: var(--rose-deep);
+      color: white;
+      padding: 28px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mag-header-title {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 48px;
+      line-height: 1;
+    }
+
+    .mag-issue {
+      color: white;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      font-family: 'DM Sans', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .mag-hero-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      min-height: 320px;
+    }
+
+    .mag-big-photo {
+      background: var(--rose-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      min-height: 320px;
+    }
+
+    .mag-big-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mag-feature-text {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--blush);
+    }
+
+    .mag-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rose-deep);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .mag-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--text);
+      line-height: 1.3;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .mag-body-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.8;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .mag-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--rose-light);
+    }
+
+    .mag-col {
+      padding: 24px 24px;
+      border-right: 1px solid var(--rose-light);
+    }
+
+    .mag-col:last-child {
+      border-right: none;
+    }
+
+    .mag-col-photo {
+      aspect-ratio: 1;
+      background: var(--sage-light);
+      border-radius: 12px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .mag-col-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mag-col-caption {
+      font-size: 12px;
+      color: var(--text-soft);
+      line-height: 1.6;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .mag-strip {
+      background: var(--sage-deep);
+      color: white;
+      padding: 14px 40px;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .mag-footer-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--rose-light);
+    }
+
+    .mag-footer-photo {
+      aspect-ratio: 16/9;
+      background: var(--rose-light);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .mag-footer-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mag-footer-text {
+      padding: 28px 28px;
+      border-left: 1px solid var(--rose-light);
+    }
+
+    .mag-pull-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--rose-deep);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .mag-pull-sub {
+      font-size: 12px;
+      color: var(--text-soft);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* WISH JAR */
+    #wishjar {
+      background: linear-gradient(160deg, var(--sage-light) 0%, var(--blush) 100%);
+      text-align: center;
+    }
+
+    .jar-container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .jar-wishes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      max-width: 680px;
+      margin: 0 auto 40px;
+    }
+
+    .wish-bubble {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 2px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      user-select: none;
+    }
+
+    .wish-bubble:hover {
+      transform: scale(1.12);
+      box-shadow: 0 6px 20px rgba(217, 116, 150, 0.3);
+    }
+
+    .wish-bubble.rose {
+      background: var(--rose-light);
+    }
+
+    .wish-bubble.sage {
+      background: var(--sage-light);
+    }
+
+    .wish-bubble.mint {
+      background: var(--mint);
+    }
+
+    .wish-bubble.cream {
+      background: #fff0c0;
+    }
+
+    .wish-bubble.claimed {
+      opacity: 0.5;
+      transform: scale(0.92);
+      cursor: default;
+    }
+
+    .wish-bubble.claimed::after {
+      content: '✓';
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--sage-deep);
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(74, 63, 69, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-card {
+      background: white;
+      border-radius: 28px;
+      padding: 40px 36px;
+      max-width: 380px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.25s;
+      box-shadow: 0 20px 60px rgba(74, 63, 69, 0.15);
+    }
+
+    .modal-overlay.open .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-emoji {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    .modal-wish-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .modal-claim-btn {
+      background: var(--rose-deep);
+      color: white;
+      border: none;
+      border-radius: 40px;
+      padding: 12px 32px;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s;
+      margin-right: 10px;
+    }
+
+    .modal-claim-btn:hover {
+      background: #c5617e;
+    }
+
+    .modal-close-btn {
+      background: var(--rose-light);
+      color: var(--rose-deep);
+      border: none;
+      border-radius: 40px;
+      padding: 12px 22px;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* TIMELINE */
+    #timeline {
+      background: var(--cream);
+      position: relative;
+    }
+
+    .timeline-wrap {
+      max-width: 680px;
+      position: relative;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--rose-light);
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .timeline-dot {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: var(--rose-light);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      z-index: 1;
+    }
+
+    .timeline-content {
+      background: white;
+      border-radius: 16px;
+      padding: 20px 22px;
+      border: 1px solid var(--rose-light);
+      flex: 1;
+      box-shadow: 0 2px 12px rgba(217, 116, 150, 0.06);
+    }
+
+    .timeline-date {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rose-deep);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .timeline-event {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .timeline-detail {
+      font-size: 13px;
+      color: var(--text-soft);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* CAT GIFS */
+    .goofy-cat {
+      position: absolute;
+      z-index: 15;
+      pointer-events: none;
+    }
+
+    .anim-1 {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .anim-2 {
+      animation: float-reverse 4s ease-in-out infinite;
+    }
+
+    .anim-3 {
+      animation: float 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#hero" class="active">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#notes">Letters</a>
+    <a href="#magazine">Magazine</a>
+    <a href="#wishjar">Wish Jar</a>
+    <a href="#timeline">Our Story</a>
+  </nav>
+
+  <section id="hero">
+    <!-- CAT 1 -->
+    <div class="goofy-cat anim-1" style="top: 15%; right: 10%; animation-delay: 0.5s;">
+      <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="goofy cat" style="width: 120px;">
+    </div>
+    <!-- CAT 2 -->
+    <div class="goofy-cat anim-2" style="bottom: 10%; left: 5%; animation-delay: 1.5s;">
+      <img src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif" alt="waving cat" style="width: 100px;">
+    </div>
+
+    <div class="petal"
+      style="width:120px;height:120px;background:var(--rose-light);top:10%;left:5%;animation-delay:0s;"></div>
+    <div class="petal" style="width:80px;height:80px;background:var(--sage-light);top:20%;right:8%;animation-delay:1s;">
+    </div>
+    <div class="petal" style="width:60px;height:60px;background:var(--mint);bottom:20%;left:12%;animation-delay:2s;">
+    </div>
+    <div class="petal"
+      style="width:100px;height:100px;background:var(--rose-light);bottom:15%;right:6%;animation-delay:1.5s;"></div>
+
+    <div class="hero-photo-ring">
+      <img src="WhatsApp Image 2026-06-05 at 11.35.40 AM.jpeg" alt="">
+    </div>
+
+    <div class="hero-script">Happy Birthday</div>
+    <div class="hero-name">AWNGU ✿</div>
+    <p class="hero-sub">Today is entirely yours — every petal, every moment, every wish. 🌿
+      Today's the day, my cute little baby girl turns 22, today's the day your mom birthed a 2 kg ki cutecel, strawberry
+      shake, sweetness girl destined for me.
+    </p>
+    <div class="date-badge">
+      <span>June 13, 2026 ✦ A very special day</span>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <!-- CAT 3 -->
+    <div class="goofy-cat anim-3" style="top: -20px; left: -20px; animation-delay: 1.2s; transform: rotate(-15deg);">
+      <img src="https://media.giphy.com/media/l4KibWpBGWchSqCRy/giphy.gif" alt="dancing cat" style="width: 100px;">
+    </div>
+    <!-- CAT 4 -->
+    <div class="goofy-cat anim-1" style="bottom: -10px; right: 20px; animation-delay: 0.2s;">
+      <img src="https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif" alt="pop cat" style="width: 80px;">
+    </div>
+
+    <div class="section-title">Her Beautiful Moments</div>
+    <div class="section-sub">A collection of favourite memories together</div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-slot">
+        <img src="WhatsApp Image 2026-06-12 at 10.16.25 PM.jpeg" alt="">
+        <div class="slot-caption">A favourite memory</div>
+      </div>
+      <div class="gallery-slot">
+        <img src="WhatsApp Image 2026-06-12 at 10.17.32 PM.jpeg" alt="">
+        <div class="slot-caption">Chatpadi Kudi</div>
+      </div>
+      <div class="gallery-slot">
+        <img src="image.png" alt="">
+        <div class="slot-caption">Birds of a feather</div>
+      </div>
+      <div class="gallery-slot">
+        <img src="candd.png" alt="">
+        <div class="slot-caption">Moj Masti</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <!-- CAT 5 -->
+    <div class="goofy-cat anim-2" style="top: -40px; right: 10px; animation-delay: 2.5s;">
+      <img src="https://media.giphy.com/media/BzyTuYCmvSORqs1Qks/giphy.gif" alt="typing cat" style="width: 110px;">
+    </div>
+    <!-- CAT 6 -->
+    <div class="goofy-cat anim-1" style="bottom: 50px; left: -30px; animation-delay: 1.8s;">
+      <img src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif" alt="walking cat" style="width: 90px;">
+    </div>
+
+    <div class="section-title" style="font-style:italic;">Letters From the Heart</div>
+    <div class="section-sub">Things I want you to know which I'll treasure forever</div>
+    <div class="notes-grid" id="notesGrid">
+      <div class="note-card">
+        <div class="note-emoji">💌</div>
+        <div class="note-title">Something I love about you</div>
+        <div class="note-body">I absolutely love your Smile and your eyes, to the point that no disdain ever could come
+          close to changing my mind. You bloom and charm the very fabric of nature and spread bliss wherever you go.
+        </div>
+      </div>
+      <div class="note-card">
+        <div class="note-emoji">🌸</div>
+        <div class="note-title">My favourite memory with you</div>
+        <div class="note-body">The day I first saw you, the entire time we had our hands glued together wherever we went
+          and i never wanted to let go, we were all and one in that moment.</div>
+      </div>
+      <div class="note-card">
+        <div class="note-emoji">✨</div>
+        <div class="note-title">Something I could replay 1000x</div>
+        <div class="note-body">All our late night facetimes, the silly jokes i make and laughter you inculcate, the
+          warmth of your presence, the way you get cringed on my jokes and the way i ragebait you into oblivion.</div>
+      </div>
+    </div>
+    <div class="goofy-cat anim-2" style="top: 20px; left: -10px; animation-delay: 3s; z-index: 50;">
+      <img src="https://media.tenor.com/YUzRkMOL-3EAAAAC/cat-dance.gif" alt="bouncing cat" style="width: 100px;">
+    </div>
+  </section>
+
+  <section id="magazine">
+    <!-- CAT 7 -->
+    <div class="goofy-cat anim-3" style="bottom: 10px; right: -20px; animation-delay: 0.8s; z-index: 50;">
+      <img src="https://media.giphy.com/media/Lq0h93752f6J9tijrh/giphy.gif" alt="keyboard cat" style="width: 120px;">
+    </div>
+    <!-- CAT 8 -->
+    <div class="goofy-cat anim-2" style="top: 20px; left: -10px; animation-delay: 3s; z-index: 50;">
+      <img src="https://media.giphy.com/media/13HbdEQzaSYIGQ/giphy.gif" alt="bouncing cat" style="width: 100px;">
+    </div>
+
+    <div class="section-title">The Birthday Issue</div>
+    <div class="section-sub">Your personal magazine! filled with your photos and words</div>
+    <div class="mag-wrapper">
+      <div class="mag-header">
+        <div class="mag-header-title">Bangalan Baddie</div>
+        <div class="mag-header-right">
+          <div class="mag-issue">Vol. 1 · Banglan Birthday Edition · 2026</div>
+        </div>
+      </div>
+      <div class="mag-body">
+        <div class="mag-hero-row">
+          <div class="mag-big-photo">
+            <img src="cpver.png" alt="">
+          </div>
+          <div class="mag-feature-text">
+            <div class="mag-eyebrow">✿ Cover Story</div>
+            <div class="mag-headline">Meri waali alag hai!</div>
+            <div class="mag-body-text">She is the kind of person who walks into a room and changes the entire vibe. Not
+              in a loud way, but in a way that makes you instantly want to be around her. She has this effortless baby
+              voice gift which melts my insides and want me to be coddled by her.
+
+            </div>
+          </div>
+        </div>
+        <div class="mag-grid-3">
+          <div class="mag-col">
+            <div class="mag-col-photo">
+              <img src="beaut.png" alt="">
+            </div>
+            <div class="mag-col-caption">I bagged this fine shyt!</div>
+          </div>
+          <div class="mag-col">
+            <div class="mag-col-photo">
+              <img src="WhatsApp Image 2026-06-12 at 11.21.45 PM.jpeg" alt="">
+            </div>
+            <div class="mag-col-caption">My weakness</div>
+          </div>
+          <div class="mag-col">
+            <div class="mag-col-photo">
+              <img src="gf.png" alt="">
+            </div>
+            <div class="mag-col-caption">Somehow shes the man in the relationship!</div>
+          </div>
+        </div>
+        <div class="mag-strip">
+          <div>✦ Radiant · Warm · Magic ✦</div>
+        </div>
+        <div class="mag-footer-row">
+          <div class="mag-hero-photo">
+            <img src="mygirl.png" alt="">
+          </div>
+          <div class="mag-footer-text">
+            <div class="mag-eyebrow">✿ From the editor</div>
+            <div class="mag-pull-quote">"She is the kind of person...who'll kick my butt if I don't make her happy (I am
+              right where i want to be)"</div>
+            <div class="mag-pull-sub">God knew i would fill her face with my bite marks so he spawned her so far away
+              from me </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wishjar">
+    <!-- CAT 9 -->
+    <div class="goofy-cat anim-1" style="top: 20%; right: 5%; animation-delay: 2.2s;">
+      <img src="https://media.giphy.com/media/WYEWpk4lRPDq0/giphy.gif" alt="sleepy cat" style="width: 110px;">
+    </div>
+    <div class="jar-container">
+      <div class="section-title" style="font-style:italic;">The Wish Jar ✨</div>
+      <div class="section-sub">Tap any icon to unwrap a wish — then claim it!</div>
+      <div class="jar-wishes-grid" id="wishGrid"></div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <!-- CAT 10 -->
+    <div class="goofy-cat anim-3" style="bottom: 50px; left: 80px; animation-delay: 1s;">
+      <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="cute cat" style="width: 100px;">
+    </div>
+    <!-- CAT 11 -->
+    <div class="goofy-cat anim-2" style="top: 50px; right: 80px; animation-delay: 0.6s;">
+      <img src="https://media.giphy.com/media/C9x8gX02SnMIoAClXa/giphy.gif" alt="vibing cat" style="width: 120px;">
+    </div>
+
+    <div class="section-title">Our Story</div>
+    <div class="section-sub">The moments that made everything</div>
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+      <div id="timelineItems">
+        <div class="timeline-item">
+          <div class="timeline-dot">✨</div>
+          <div class="timeline-content">
+            <div class="timeline-date">The beginning</div>
+            <div class="timeline-event">The day we first met</div>
+            <div class="timeline-detail">Tell the story here...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="wishModal" onclick="closeModal(event)">
+    <div class="modal-card">
+      <div class="modal-emoji" id="modalEmoji">🌸</div>
+      <div class="modal-wish-text" id="modalText">Wishing you...</div>
+      <button class="modal-claim-btn" id="claimBtn" onclick="claimWish()">Claim this wish 🌿</button>
+      <button class="modal-close-btn" onclick="closeModalDirect()">Close</button>
+    </div>
+  </div>
+
+  <!-- MUSIC PLAYER -->
+  <div id="music-player"
+    style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: white; padding: 10px; border-radius: 50%; box-shadow: 0 4px 12px rgba(217, 116, 150, 0.2); cursor: pointer; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border: 2px dashed var(--rose-light); transition: all 0.3s;">
+    <span id="music-icon" style="font-size: 24px;">🎵</span>
+    <audio id="bg-music" loop>
+      <!-- Change the src below to your music file (e.g. 'song.mp3' if you have it in the same folder) -->
+      <source src="song.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    // WISH JAR (Kept interactive because it's part of the fun!)
+    const emojis = ['🌸', '🌿', '✨', '💌', '🌺', '🎀', '🍃', '💫', '🌼', '🦋', '🍓', '🌙', '⭐', '🎂', '💐', '🌈', '🍀', '🫧'];
+    const colors = ['rose', 'sage', 'mint', 'cream', 'rose', 'sage', 'mint', 'cream', 'rose', 'sage', 'mint', 'cream', 'rose', 'sage', 'mint', 'cream', 'rose', 'sage'];
+    const defaultWishes = [
+      { emoji: '🌸', text: 'May every morning feel like the first day of something wonderful.' },
+      { emoji: '🌿', text: 'May you always know how deeply you are loved.' },
+      { emoji: '✨', text: 'May this year bring you everything you\'ve been quietly hoping for.' },
+      { emoji: '💌', text: 'May your laugh always be this easy, and your heart always this full.' },
+      { emoji: '🌺', text: 'May you never forget how magical you truly are.' },
+      { emoji: '🎀', text: 'May every door you knock on swing open for you.' },
+      { emoji: '🍃', text: 'May peace find you wherever you rest your head tonight.' },
+      { emoji: '💫', text: 'May the universe return to you every kindness you\'ve ever given.' },
+      { emoji: '🌼', text: 'May your birthday wishes all come true, one by one.' },
+      { emoji: '🦋', text: 'May every day be as bright and beautiful as you are.' },
+      { emoji: '🍓', text: 'May you always have exactly enough — love, joy, and sweetness.' },
+    ];
+    let wishes = defaultWishes.map((w, i) => ({ ...w, color: colors[i % colors.length], claimed: false, id: i }));
+    let currentWishId = null;
+
+    function renderWishes() {
+      const grid = document.getElementById('wishGrid');
+      grid.innerHTML = '';
+      wishes.forEach(w => {
+        const div = document.createElement('div');
+        div.className = `wish-bubble ${w.color} ${w.claimed ? 'claimed' : ''}`;
+        div.textContent = w.emoji;
+        div.title = w.claimed ? 'Claimed ✓' : 'Tap to open!';
+        if (!w.claimed) div.onclick = () => openWish(w.id);
+        grid.appendChild(div);
+      });
+    }
+    function openWish(id) {
+      const w = wishes.find(x => x.id === id);
+      if (!w || w.claimed) return;
+      currentWishId = id;
+      document.getElementById('modalEmoji').textContent = w.emoji;
+      document.getElementById('modalText').textContent = w.text;
+      document.getElementById('wishModal').classList.add('open');
+    }
+    function closeModal(e) { if (e.target === document.getElementById('wishModal')) closeModalDirect(); }
+    function closeModalDirect() { document.getElementById('wishModal').classList.remove('open'); currentWishId = null; }
+    function claimWish() {
+      if (currentWishId === null) return;
+      const w = wishes.find(x => x.id === currentWishId);
+      if (w) w.claimed = true;
+      renderWishes();
+      closeModalDirect();
+    }
+    renderWishes();
+
+    // NAV ACTIVE
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+    sections.forEach(s => observer.observe(s));
+
+    // MUSIC PLAYERdocument.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById('bg-music');
+    const musicBtn = document.getElementById('music-player');
+    const musicIcon = document.getElementById('music-icon');
+    let isPlaying = false;
+
+    musicBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent body click from firing immediately
+      if (isPlaying) {
+        music.pause();
+        musicIcon.textContent = '🎵';
+        musicBtn.style.borderColor = 'var(--rose-light)';
+      } else {
+        music.play();
+        musicIcon.textContent = '⏸️';
+        musicBtn.style.borderColor = 'var(--rose-deep)';
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // Autoplay on first interaction with the page
+    document.body.addEventListener('click', () => {
+      if (!isPlaying) {
+        music.play().then(() => {
+          isPlaying = true;
+          musicIcon.textContent = '⏸️';
+          musicBtn.style.borderColor = 'var(--rose-deep)';
+        }).catch(() => {
+          // Autoplay was prevented by browser, wait for manual click
+        });
+      }
+    }, { once: true });
+  </script>
+
+
+</body>
+
+</html>
